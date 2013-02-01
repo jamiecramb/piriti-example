@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- ============================================================================= -->
-<!--  Copyright 2012 NCR Corporation                                               -->
-<!-- ============================================================================= -->
-<!--  All revision information is updated automatically from source code control   -->
-<!--  change records = please do not manually edit.                                -->
-<!-- ============================================================================= -->
-<!--                                                                               -->
-<!-- ============================================================================= -->
-<!--  $LastChangedRevision:: 5377                                     $            -->
-<!--  $LastChangedBy:: iy163100                                       $            -->
-<!--  $LastChangedDate:: 2012-12-14 16:01:22 +0000 (Fri, 14 Dec 2012) $            -->
-<!-- ============================================================================= -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.ncr.nep.connections.piriti</groupId>
+    <groupId>org.test.piriti</groupId>
     <artifactId>piriti-test</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>war</packaging>
@@ -26,36 +14,11 @@
         <piriti.version>0.8</piriti.version>
         <totoe.version>0.3</totoe.version>
         <slf4j.version>1.6.4</slf4j.version>
-        <dashboardcommon.version>1.0.0-SNAPSHOT</dashboardcommon.version>
+        <m2eclipse.wtp.contextRoot>/piriti-example</m2eclipse.wtp.contextRoot>
     </properties>
 
     <dependencies>
-    
-        <!-- NCR dependencies -->
-        <dependency>
-            <groupId>com.ncr.nep.connections.common</groupId>
-            <artifactId>nep-connections-common-core-rest</artifactId>
-            <version>${dashboardcommon.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>*</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>com.ncr.nep.connections.common</groupId>
-            <artifactId>nep-connections-common-validation-infrastructure-lib</artifactId>
-            <version>${dashboardcommon.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.ncr.nep.connections.common</groupId>
-            <artifactId>nep-connections-common-validation-infrastructure-lib</artifactId>
-            <classifier>sources</classifier>
-            <version>${dashboardcommon.version}</version>
-        </dependency>
-    
-        <!-- Third-party component dependencies (Server)-->
+        <!-- Third-party component dependencies -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>

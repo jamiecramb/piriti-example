@@ -12,7 +12,6 @@ import org.test.piriti.shared.WildCat;
 import com.google.gwt.json.client.JSONObject;
 import com.google.gwt.json.client.JSONString;
 import com.google.gwt.json.client.JSONValue;
-import com.ncr.nep.connections.common.validation.Check;
 
 /**
  * Creates an instance of the correct animal based on the {@link SerializationConstants#TYPE_FIELD} field. This class is
@@ -36,8 +35,10 @@ public class AnimalCreator extends JsonInstanceCreator<AbstractNamedAnimal> {
         // Verify the type field exists and is valid
         JSONValue typeJsonObject = jsonObject.get(SerializationConstants.TYPE_FIELD);
 
-        Check.notNull(typeJsonObject, "'" + SerializationConstants.TYPE_FIELD
-                + "' field was not present in JSON document.");
+        if (typeJsonObject == null) {
+            throw new IllegalArgumentException("'" + SerializationConstants.TYPE_FIELD
+                    + "' field was not present in JSON document.");
+        }
 
         // Try to get a JSON String from the field
         JSONString typeString = typeJsonObject.isString();
