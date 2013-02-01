@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================================= -->
+<!--  Copyright 2012 NCR Corporation                                               -->
+<!-- ============================================================================= -->
+<!--  All revision information is updated automatically from source code control   -->
+<!--  change records = please do not manually edit.                                -->
+<!-- ============================================================================= -->
+<!--                                                                               -->
+<!-- ============================================================================= -->
+<!--  $LastChangedRevision:: 5377                                     $            -->
+<!--  $LastChangedBy:: iy163100                                       $            -->
+<!--  $LastChangedDate:: 2012-12-14 16:01:22 +0000 (Fri, 14 Dec 2012) $            -->
+<!-- ============================================================================= -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.ncr.nep.connections.piriti</groupId>
+    <artifactId>piriti-test</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <properties>
+        <spring.version>3.1.0.RELEASE</spring.version>
+        <jackson.version>1.9.2</jackson.version>
+        <gwt.version>2.4.0</gwt.version>
+        <gin.version>1.5.0</gin.version>
+        <piriti.version>0.8</piriti.version>
+        <totoe.version>0.3</totoe.version>
+        <slf4j.version>1.6.4</slf4j.version>
+        <dashboardcommon.version>1.0.0-SNAPSHOT</dashboardcommon.version>
+    </properties>
+
+    <dependencies>
+    
+        <!-- NCR dependencies -->
+        <dependency>
+            <groupId>com.ncr.nep.connections.common</groupId>
+            <artifactId>nep-connections-common-core-rest</artifactId>
+            <version>${dashboardcommon.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>*</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.ncr.nep.connections.common</groupId>
+            <artifactId>nep-connections-common-validation-infrastructure-lib</artifactId>
+            <version>${dashboardcommon.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ncr.nep.connections.common</groupId>
+            <artifactId>nep-connections-common-validation-infrastructure-lib</artifactId>
+            <classifier>sources</classifier>
+            <version>${dashboardcommon.version}</version>
+        </dependency>
+    
+        <!-- Third-party component dependencies (Server)-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+        <!-- Third-party component dependencies (GWT)-->
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-user</artifactId>
+            <version>${gwt.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-servlet</artifactId>
+            <version>${gwt.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>name.pehl</groupId>
+            <artifactId>piriti-user</artifactId>
+            <version>${piriti.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>name.pehl</groupId>
+            <artifactId>piriti-dev</artifactId>
+            <version>${piriti.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>name.pehl</groupId>
+            <artifactId>totoe</artifactId>
+            <version>${totoe.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt.inject</groupId>
+            <artifactId>gin</artifactId>
+            <version>${gin.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.0.0.GA</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>gwt-maven-plugin</artifactId>
+                <version>${gwt.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <compilerVersion>1.6</compilerVersion>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
