@@ -12,8 +12,8 @@ import org.test.piriti.client.json.JsonWriters.DogJsonWriter;
 import org.test.piriti.client.json.JsonWriters.WildCatJsonWriter;
 import org.test.piriti.client.presenter.MainPresenter;
 import org.test.piriti.client.presenter.MainPresenterImpl;
-import org.test.piriti.client.presenter.view.MainView;
-import org.test.piriti.client.presenter.view.MainViewImpl;
+import org.test.piriti.client.view.MainView;
+import org.test.piriti.client.view.MainViewImpl;
 
 import com.google.gwt.inject.client.AbstractGinModule;
 import com.google.inject.Singleton;

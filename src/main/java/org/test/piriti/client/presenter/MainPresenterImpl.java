@@ -2,7 +2,7 @@ package org.test.piriti.client.presenter;
 
 import org.test.piriti.client.json.JsonReaders.AnimalGroupJsonReader;
 import org.test.piriti.client.json.JsonWriters.AnimalGroupJsonWriter;
-import org.test.piriti.client.presenter.view.MainView;
+import org.test.piriti.client.view.MainView;
 import org.test.piriti.shared.AbstractNamedAnimal;
 import org.test.piriti.shared.AnimalGroup;
 import org.test.piriti.shared.WildCat;

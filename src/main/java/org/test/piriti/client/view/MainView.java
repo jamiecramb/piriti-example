@@ -1,4 +1,4 @@
-package org.test.piriti.client.presenter.view;
+package org.test.piriti.client.view;
 
 import org.test.piriti.client.presenter.MainPresenter;
 
