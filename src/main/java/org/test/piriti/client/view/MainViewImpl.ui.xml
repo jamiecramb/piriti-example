@@ -2,10 +2,10 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
     <g:HTMLPanel>
         <h1>Piriti Polymorphism Test</h1>
-        <g:Button ui:field="btnGetAnimals" text="Get Animals" />
-        <g:Button ui:field="btnSendAnimals" text="Send Animals" />
+        <g:Button debugId="MainView_btnGetAnimals" ui:field="btnGetAnimals" text="Get Animals" />
+        <g:Button debugId="MainView_btnSendAnimals" ui:field="btnSendAnimals" text="Send Animals" />
         <br />
         Animals Download Status:<br />
-        <g:TextArea ui:field="txtDownloadStatus" text="No animals downloaded yet" width="1000px" height="300px" />
+        <g:TextArea debugId="MainView_txtDownloadStatus" ui:field="txtDownloadStatus" text="No animals downloaded yet" width="1000px" height="300px" />
     </g:HTMLPanel>
 </ui:UiBinder> 
